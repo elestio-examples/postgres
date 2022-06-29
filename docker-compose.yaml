@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  postgres:
+    image: postgres: ${SOFTWARE_VERSION_TAG}
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD:  ${SOFTWARE_PASSWORD}
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - '34523:5432'
+
+  pgadmin4:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD:  ${SOFTWARE_PASSWORD}
+      PGADMIN_LISTEN_PORT: 443
+      PGADMIN_ENABLE_TLS: 1  
+    ports:
+      - "172.17.0.1:34343:443"
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json

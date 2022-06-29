@@ -1,0 +1,30 @@
+ports:
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "443"
+    targetPort: "8080"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: false
+environments:
+  - key: "SOFTWARE_VERSION_TAG"
+    value: "latest"
+  - key: "ADMIN_EMAIL"
+    value: "your_real@domain.email"
+  - key: "ADMIN_PASSWORD"
+    value: "random_password"
+config:
+  runTime: "dockerCompose"
+  version: ""
+  framework: ""
+  buildCommand: "docker-compose build"
+  buildDir: "/"
+  runCommand: "docker-compose up -d"
+lifeCycleConfig:
+  preInstallCommand: "./scripts/preInstall.sh"
+  postInstallCommand: "./scripts/postInstall.sh"
+  preBackupCommand: "./scripts/preBackup.sh"
+  postBackupCommand: "./scripts/postBackup.sh"
+  preRestoreCommand: "./scripts/preRestore.sh"
+  postRestoreCommand: "./scripts/postRestore.sh"
