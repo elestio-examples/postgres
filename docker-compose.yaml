@@ -2,7 +2,7 @@ version: '3'
 services:
 
   postgres:
-    image: postgres: ${SOFTWARE_VERSION_TAG}
+    image: postgres:${SOFTWARE_VERSION_TAG}
     container_name: postgres
     restart: always
     environment:
@@ -25,6 +25,6 @@ services:
       PGADMIN_LISTEN_PORT: 443
       PGADMIN_ENABLE_TLS: 1  
     ports:
-      - "172.17.0.1:34343:443"
+      - "172.17.0.1:4443:443"
     volumes:
       - ./servers.json:/pgadmin4/servers.json
