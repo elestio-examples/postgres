@@ -10,7 +10,7 @@ cat <<EOT > ./servers.json
             "Name": "local",
             "Group": "Servers",
             "Host": "172.17.0.1",
-            "Port": 34523,
+            "Port": 5432,
             "MaintenanceDB": "postgres",
             "SSLMode": "prefer",
             "Username": "postgres",
