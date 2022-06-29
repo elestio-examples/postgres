@@ -21,7 +21,7 @@ services:
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${SOFTWARE_PASSWORD}
+      PGADMIN_DEFAULT_PASSWORD: ${ADMIN_PASSWORD}
       PGADMIN_LISTEN_PORT: 443
       PGADMIN_ENABLE_TLS: 1  
     ports:

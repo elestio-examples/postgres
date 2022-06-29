@@ -10,6 +10,8 @@ ports:
 environments:
   - key: "SOFTWARE_VERSION_TAG"
     value: "latest"
+  - key: "SOFTWARE_PASSWORD"
+    value: "random_password"
   - key: "ADMIN_EMAIL"
     value: "your_real@domain.email"
   - key: "ADMIN_PASSWORD"
