@@ -8,7 +8,7 @@ services:
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD:  ${SOFTWARE_PASSWORD}
+      POSTGRES_PASSWORD: ${SOFTWARE_PASSWORD}
       PGDATA: /var/lib/postgresql/data
     volumes:
       - ./data:/var/lib/postgresql/data
@@ -21,7 +21,7 @@ services:
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD:  ${SOFTWARE_PASSWORD}
+      PGADMIN_DEFAULT_PASSWORD: ${SOFTWARE_PASSWORD}
       PGADMIN_LISTEN_PORT: 443
       PGADMIN_ENABLE_TLS: 1  
     ports:
