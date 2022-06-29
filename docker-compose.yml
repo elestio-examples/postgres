@@ -13,7 +13,7 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
     ports:
-      - '34523:5432'
+      - '5432:5432'
 
   pgadmin4:
     image: dpage/pgadmin4:latest
@@ -22,9 +22,8 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${ADMIN_PASSWORD}
-      PGADMIN_LISTEN_PORT: 443
-      PGADMIN_ENABLE_TLS: 1  
+      PGADMIN_LISTEN_PORT: 8080
     ports:
-      - "172.17.0.1:4443:443"
+      - "172.17.0.1:8080:8080"
     volumes:
       - ./servers.json:/pgadmin4/servers.json
