@@ -16,10 +16,10 @@ You can can open pgAdmin web UI here:
 You can connect to your server with any Postgres client with those credentials:
 
     Host: [CI_CD_DOMAIN]
-    Port: 5432
+    Port: 25432
     Login: postgres
     Password: [APP_PASSWORD] (set in env var)
 
 You can also connect with any PostgreSQL client, including the official CLI:
     
-    PGPASSWORD=[APP_PASSWORD] psql --host=[CI_CD_DOMAIN] --port=5432 --username=postgres
+    PGPASSWORD=[APP_PASSWORD] psql --host=[CI_CD_DOMAIN] --port=25432 --username=postgres
