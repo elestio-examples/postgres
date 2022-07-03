@@ -3,7 +3,6 @@ services:
 
   postgres:
     image: postgres:${SOFTWARE_VERSION_TAG}
-    container_name: postgres
     restart: always
     environment:
       POSTGRES_DB: postgres
@@ -17,7 +16,6 @@ services:
 
   pgadmin4:
     image: dpage/pgadmin4:latest
-    container_name: pgadmin4
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL}
