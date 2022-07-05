@@ -40,7 +40,7 @@ lifeCycleConfig:
   postRestoreCommand: "./scripts/postRestore.sh"
 webUI:
   - url: "https://[CI_CD_DOMAIN]"
-    label: "PG Admin"
+    label: "pgadmin"
     login: "[ADMIN_EMAIL]"
     password: "[ADMIN_PASSWORD]"
     
