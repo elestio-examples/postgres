@@ -39,9 +39,9 @@ lifeCycleConfig:
   preRestoreCommand: "./scripts/preRestore.sh"
   postRestoreCommand: "./scripts/postRestore.sh"
 webUI:
-  -url: "https://[CI_CD_DOMAIN]"
-   label: "Website"
-   login: "[ADMIN_EMAIL]"
-   password: "[ADMIN_PASSWORD]"
+  - url: "https://[CI_CD_DOMAIN]"
+    label: "Website"
+    login: "[ADMIN_EMAIL]"
+    password: "[ADMIN_PASSWORD]"
     
 
