@@ -29,6 +29,8 @@ config:
   buildCommand: "docker-compose build"
   buildDir: "/"
   runCommand: "docker-compose up -d"
+  icon: "icon.svg"
+  screenshot: "screenshot.png"
 lifeCycleConfig:
   preInstallCommand: "./scripts/preInstall.sh"
   postInstallCommand: "./scripts/postInstall.sh"
@@ -36,3 +38,10 @@ lifeCycleConfig:
   postBackupCommand: "./scripts/postBackup.sh"
   preRestoreCommand: "./scripts/preRestore.sh"
   postRestoreCommand: "./scripts/postRestore.sh"
+webUI:
+  -url: "https://[CI_CD_DOMAIN]"
+   label: "Website"
+   login: "[ADMIN_EMAIL]"
+   password: "[ADMIN_PASSWORD]"
+    
+
