@@ -18,7 +18,7 @@ You can connect to your server with any Postgres client with those credentials:
     Host: [CI_CD_DOMAIN]
     Port: 25432
     Login: postgres
-    Password: [APP_PASSWORD] (set in env var)
+    Password: [SOFTWARE_PASSWORD] (set in env var)
 
 You can also connect with any PostgreSQL client, including the official CLI:
     
