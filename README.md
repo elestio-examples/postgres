@@ -22,4 +22,4 @@ You can connect to your server with any Postgres client with those credentials:
 
 You can also connect with any PostgreSQL client, including the official CLI:
     
-    PGPASSWORD=[APP_PASSWORD] psql --host=[CI_CD_DOMAIN] --port=25432 --username=postgres
+    PGPASSWORD=[SOFTWARE_PASSWORD] psql --host=[CI_CD_DOMAIN] --port=25432 --username=postgres
