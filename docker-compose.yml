@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres:${SOFTWARE_VERSION_TAG}
     restart: always
-    command: -c ssl=on -c ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem -c ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+    #command: -c ssl=on -c ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem -c ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
