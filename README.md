@@ -6,7 +6,7 @@ Example CI/CD pipeline showing how to deploy a postgres instance to elestio.
 
 # Once deployed ...
 
-You can can open pgAdmin web UI here:
+You can open pgAdmin web UI here:
 
     https://[CI_CD_DOMAIN]/
     Login: [ADMIN_EMAIL] (set in env var)
