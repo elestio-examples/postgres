@@ -8,8 +8,8 @@
 
 # Postgres, verified and packaged by Elestio
 
-[Postgres](https://github.com/postgres/postgres)  is an advanced object-relational database management system
-that supports an extended subset of the SQL standard, including transactions, foreign keys, subqueries, triggers, user-defined types and functions.  This distribution also contains C language bindings.
+[Postgres](https://github.com/postgres/postgres) is an advanced object-relational database management system
+that supports an extended subset of the SQL standard, including transactions, foreign keys, subqueries, triggers, user-defined types and functions. This distribution also contains C language bindings.
 <img src="https://github.com/elestio-examples/postgres/blob/master/screenshot.png?raw=true" alt="postgres" width="800">
 
 Deploy a <a target="_blank" href="https://elest.io/open-source/postgres">fully managed Postgres</a> on <a target="_blank" href="https://elest.io/">elest.io</a> if you want automated backups, reverse proxy with SSL termination, firewall, automated OS & Software updates, and a team of Linux experts and open source enthusiasts to ensure your services are always safe, and functional.
@@ -53,26 +53,35 @@ Here are some example snippets to help you get started creating a container.
 
     version: '3.4'
     services:
-    postgres:
-        image: elestio4test/postgres:${SOFTWARE_VERSION_TAG}
-        ports:
-        - 172.17.0.1:8652:8080
-        restart: always
-        environment:
-        QUERY_DEFAULTS_LIMIT: 25
-        AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
-        PERSISTENCE_DATA_PATH: '/var/lib/postgres'
-        CLUSTER_HOSTNAME: 'node1'
-        DEFAULT_VECTORIZER_MODULE: text2vec-cohere
-        ENABLE_MODULES: text2vec-cohere
-        COHERE_APIKEY: sk-foobar
-        TRANSFORMERS_INFERENCE_API: http://t2v-transformers:8080
-        volumes:
-        - ./postgres:/var/lib/postgres
-    t2v-transformers:
-        image: semitechnologies/transformers-inference:sentence-transformers-msmarco-distilroberta-base-v2
-        environment:
-        ENABLE_CUDA: 0 # set to 1 to enable
+        postgres:
+            image: elestio4test/postgres:${SOFTWARE_VERSION_TAG}
+            ports:
+                - 172.17.0.1:8652:8080
+            restart: always
+            environment:
+                QUERY_DEFAULTS_LIMIT: 25
+                AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+                PERSISTENCE_DATA_PATH: '/var/lib/postgres'
+                CLUSTER_HOSTNAME: 'node1'
+                DEFAULT_VECTORIZER_MODULE: text2vec-cohere
+                ENABLE_MODULES: text2vec-cohere
+                COHERE_APIKEY: sk-foobar
+                TRANSFORMERS_INFERENCE_API: http://t2v-transformers:8080
+            volumes:
+                - ./postgres:/var/lib/postgres
+        t2v-transformers:
+            image: semitechnologies/transformers-inference:sentence-transformers-msmarco-distilroberta-base-v2
+            environment:
+                ENABLE_CUDA: 0 # set to 1 to enable
+
+### Environment variables
+
+|       Variable       | Value (example) |
+| :------------------: | :-------------: |
+| SOFTWARE_VERSION_TAG |     latest      |
+|  SOFTWARE_PASSWORD   |  your-password  |
+|     ADMIN_EMAIL      | admin@email.com |
+|    ADMIN_PASSWORD    |  your-password  |
 
 # Maintenance
 
