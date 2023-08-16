@@ -1,6 +1,5 @@
 version: '3'
 services:
-
   postgres:
     image: postgres:${SOFTWARE_VERSION_TAG}
     restart: always
@@ -10,6 +9,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${SOFTWARE_PASSWORD}
       PGDATA: /var/lib/postgresql/data
+      TS_TUNE_MAX_CONNS: 100
     volumes:
       - ./data:/var/lib/postgresql/data
     ports:
