@@ -120,6 +120,6 @@ That's it! With these simple steps, you can easily backup and restore your data 
 
 - <a target="_blank" href="https://github.com/postgres/postgres">Postgres Github repository</a>
 
-- <a target="_blank" href="https://postgres.io/developers/postgres">Postgres documentation</a>
+- <a target="_blank" href="https://www.postgresql.org/docs/">Postgres documentation</a>
 
 - <a target="_blank" href="https://github.com/elestio-examples/postgres">Elestio/postgres Github repository</a>
