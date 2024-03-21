@@ -1,4 +1,3 @@
-#nothing to do
 set -o allexport; source .env; set +o allexport;
 
 docker-compose down
