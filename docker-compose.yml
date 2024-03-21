@@ -5,7 +5,7 @@ services:
     shm_size: 1g
     container_name: postgres    
     restart: always
-    command: -c ssl=on -c ssl_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem -c ssl_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+    #command: -c ssl=on -c ssl_cert_file=/var/lib/postgresql/data/server.crt -c ssl_key_file=/var/lib/postgresql/data/server.key
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
