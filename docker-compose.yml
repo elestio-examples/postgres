@@ -1,9 +1,8 @@
 version: '3'
 services:
   postgres:
-    image: postgres:${SOFTWARE_VERSION_TAG}
+    image: elestio/postgres:${SOFTWARE_VERSION_TAG}
     shm_size: 1g
-    container_name: postgres    
     restart: always
     #command: -c ssl=on -c ssl_cert_file=/var/lib/postgresql/data/server.crt -c ssl_key_file=/var/lib/postgresql/data/server.key
     environment:
@@ -17,9 +16,8 @@ services:
     ports:
       - '172.17.0.1:5432:5432'
 
-  pgadmin4:
-    image: dpage/pgadmin4:latest
-    container_name: pgadmin4
+  pgadmin:
+    image: elestio/pgadmin:latest
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${ADMIN_EMAIL}
